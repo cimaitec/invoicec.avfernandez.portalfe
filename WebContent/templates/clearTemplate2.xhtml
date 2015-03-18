@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+ 
+	<title ><ui:insert name="tituloPagina">Consulta por documento</ui:insert>
+	</title>
+	<h:outputStylesheet library="css" name="base.css" />       
+	
+</h:head>
+
+<h:body   bgcolor="#ffffff">
+
+	<p:layout fullPage="true" id="DatosPaginaPrincipal">
+	
+		<p:layoutUnit position="north" size="750"  header="Menú" resizable="true" collapsible="true">
+			
+			<h:form>
+				<h:panelGroup>
+					<h:panelGroup style="display: block; text-align: right;">
+					<h:panelGrid columns="5" >
+								
+						
+					<h:panelGrid columns="2">				
+								<h:graphicImage width="100" value="/imagenes/logo.png" />
+					</h:panelGrid>
+					<h:panelGrid columns="2">				
+								<h:outputLabel value="" />
+								<h:outputLabel value="" />
+					</h:panelGrid>
+					<h:panelGrid columns="2">				
+								<h:outputLabel value="" />
+								<h:outputLabel value="" />
+					</h:panelGrid>
+					<h:panelGrid columns="2">				
+								<h:outputLabel value="" />
+								<h:outputLabel value="" />
+					</h:panelGrid>
+					
+					
+					<h:panelGrid columns="6">
+							    
+					</h:panelGrid>
+					</h:panelGrid>
+					</h:panelGroup>
+						
+				</h:panelGroup>
+				<h:panelGroup style=" font-size: 1.1em;font-weight:400; display: block; text-align: left;padding: 10px;">
+				<ui:insert name="tituloFormulario"></ui:insert>
+				</h:panelGroup>
+			</h:form>
+
+			<h:form id="FormularioPrincipal">
+		  
+			<h:outputStylesheet library="css" name="base.css" />	
+			<p:menubar id="datosmenuvar" styleClass="ui-menubar" >
+			</p:menubar>
+		
+			</h:form>
+			<ui:insert name="contenido">
+			
+							Aqui va el contenido
+		</ui:insert>
+			
+		</p:layoutUnit> 
+
+		<p:layoutUnit  position="center">
+			<p:ajaxStatus style="width:16px;height:16px;" id="ajaxStatusPanel">
+				<f:facet name="start">
+					<h:graphicImage value="/imagenes/reloj.gif" />
+				</f:facet>
+
+				<f:facet name="complete">
+					<h:outputText value="" />
+				</f:facet>
+			</p:ajaxStatus>
+			
+		</p:layoutUnit>
+
+	</p:layout>
+
+	<ui:insert name="dialogo">
+							Aqui va el dialogo
+	</ui:insert>
+
+</h:body>
+
+</html>

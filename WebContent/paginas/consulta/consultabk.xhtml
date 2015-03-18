@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+ <!-- <ui:composition template="/templates/clearTemplate.xhtml"> -->
+
+ <ui:composition template="/templates/cimaTemplate.xhtml">
+	<ui:define name="tituloPagina">
+		<h:outputText value=".::Documentos::." />
+	</ui:define>
+
+	<ui:define name="tituloFormulario">
+		<h:outputText value="Documentos" styleClass="titulo" />
+	</ui:define>
+	<ui:define name="contenido" >
+	
+	<style>
+	.style1{
+		text-align: center;
+	}
+	.style2{
+		text-align: center;
+		background: blue;
+		color: white;
+		font-weight: bold;
+	}
+	.imageClass{
+    	display: block;  
+    	background-image: url('/imagenes/pdf.png') no-repeat 100%;  
+    }  
+	</style>
+	<h:form id="frm1" styleClass="form" >
+	
+			<p:growl id="growl" showDetail="true" sticky="true" />  
+		 	<p:panel id="datosEmisorPanel" >
+		 	<p:panel id="datosEmisor" menuTitle="Buscador" style="margin-bottom:25px;">
+		 		<h3 align="center" class="title ui-widget-header ui-corner-all">Buscador</h3>
+		 		
+		 		
+		 		
+		 		
+		 			<p:panelGrid style="margin: 0 auto;">
+					 		<p:row>
+								<p:column styleClass="style1">
+									<strong><h:outputLabel styleClass="label" size="30"  value="Cédula/RUC/Pasaporte"/></strong>
+								</p:column>
+								<p:column styleClass="style3">
+									<h:inputText styleClass="text" style="font-weight: bold;" value="#{FacConsultaDoc.ruc}" />
+								</p:column>
+							</p:row>
+							<p:row>
+								<p:column styleClass="style1">
+									<strong><h:outputLabel styleClass="label"  value="Numero del Documento:" /></strong>
+								</p:column>
+								<p:column styleClass="style3">
+									<h:inputText value="#{FacConsultaDoc.numDocumento}" size="30" title="Numero del Documento" />
+								</p:column>
+							</p:row>
+							<p:row>
+								<p:column styleClass="style1">
+									<strong><h:outputLabel styleClass="label"  value="Tipo de Documento:" /></strong>
+								</p:column>
+								<p:column styleClass="style3">
+									<p:selectOneMenu value="#{FacConsultaDoc.seleccionTipo}">
+										<f:selectItems value="#{FacConsultaDoc.tipo}"/>
+									</p:selectOneMenu>
+								</p:column>
+							</p:row>			
+					<p:row>
+						<p:column  colspan="2" style="text-align: center;" rowspan="2" > 
+							<p:commandButton value="  Busqueda " icon="ui-icon-search" 
+											 title="Buscar Filtrado" 
+											 action="#{FacConsultaDoc.llenarDetalleDocumento}" 
+											 update=":frm1:listaDocumentos,:frm1:datosEmisorPanel">
+							</p:commandButton>
+						</p:column>
+					</p:row>
+					
+				 </p:panelGrid>
+		 		
+		 		
+		 	
+		 	<br></br>
+			   <!--   <p:panel id="datosDetalle22" >-->
+				<h:panelGroup id="listaDocumentos">
+					<p:dataTable styleClass="cabeceraTabla" var="facDetalleDocumentoEntidad" value="#{FacConsultaDoc.detalle_documentos_prueba}" paginator="true" rows="10"
+						selection="#{FacConsultaDoc.selectedfacDetalleDocumentoEntidad}">
+						<f:facet name="header">  
+		            		Consulta de Documemto  
+		        		</f:facet> 
+						<p:column headerText="Identificación" style="width:10%">
+							<h:outputText value="#{facDetalleDocumentoEntidad.RFCREC}" />
+						</p:column>
+						<p:column headerText="Razón Social" style="width:30%">
+							<h:outputText value="#{facDetalleDocumentoEntidad.NOMREC}" />
+						</p:column>
+						<p:column  headerText="Documento" style="width:20%">
+							<h:outputText value="#{facDetalleDocumentoEntidad.TIPODOC}" />
+						</p:column>
+						<p:column  headerText="Secuencial" style="width:15%" sortBy="#{facDetalleDocumentoEntidad.FOLFAC}">
+							<h:outputText value="#{facDetalleDocumentoEntidad.FOLFAC}" />
+						</p:column>
+						<p:column  headerText="TOTAL" style="width:10% ; text-align:rigth">
+							<h:outputText value="#{facDetalleDocumentoEntidad.TOTAL}" />
+						</p:column>
+						<p:column headerText="FECHA" style="width:10% ; text-align:center" sortBy="#{facDetalleDocumentoEntidad.FECHA}">
+							<h:outputText value="#{facDetalleDocumentoEntidad.FECHA}" />
+						</p:column>			
+						<p:column headerText="ESTADO">
+							<h:outputText value="#{facDetalleDocumentoEntidad.EDOFAC}"/>
+						</p:column>			
+						<p:column headerText="PDF">
+							<p:commandLink action="#{FacConsultaDoc.pdf()}" update=":datosDetalle22" ajax="false">
+								<p:graphicImage value="/imagenes/pdf.png"></p:graphicImage>
+								<f:setPropertyActionListener target="#{FacConsultaDoc.valorDetalleDocumento}" value="#{facDetalleDocumentoEntidad}"></f:setPropertyActionListener>
+							</p:commandLink>  
+						</p:column>			
+						<p:column headerText="XML">						
+							<p:commandLink  actionListener="#{FacConsultaDoc.xml(facDetalleDocumentoEntidad)}" update=":frm1:growl" ajax="false">
+								<p:graphicImage value="/imagenes/xml.png"></p:graphicImage>
+								<f:setPropertyActionListener target="#{FacConsultaDoc.valorDetalleDocumento}" value="#{facDetalleDocumentoEntidad}"></f:setPropertyActionListener>
+							</p:commandLink>
+						</p:column>
+						<!--
+						<p:column selectionMode="multiple">
+						</p:column>
+						-->
+					</p:dataTable>
+				</h:panelGroup>
+				</p:panel>
+ 
+		 </p:panel>
+	 </h:form>
+	</ui:define>
+</ui:composition>
+</html>

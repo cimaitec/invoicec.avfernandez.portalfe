@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="Invoice">
+		<jta-data-source>java:/Invoice</jta-data-source>
+		<class>com.general.entidades.FacGeneral</class>
+	    <class>com.general.entidades.FacProducto</class>
+	    <class>com.general.entidades.FacCliente</class>
+	    <class>com.general.entidades.FacClientePK</class>
+	    <class>com.general.entidades.FacEstablecimiento</class>
+	    <class>com.general.entidades.FacEstablecimientoPK</class>
+	    <class>com.general.entidades.FacPuntoEmision</class>
+	    <class>com.general.entidades.FacPuntoEmisionPK</class>
+		<class>com.general.entidades.FacTiposDocumento</class>
+		<class>com.general.entidades.FacClavescontingencia</class>
+	    
+		<class>com.documentos.entidades.FacEmpresa</class>
+		<class>com.documentos.entidades.FacCabDocumento</class>
+		<class>com.documentos.entidades.FacCabDocumentoPK</class>
+		<class>com.documentos.entidades.FacCabDocumentosAdicional</class>
+		<class>com.documentos.entidades.FacCabDocumentosAdicionalPK</class>
+		<class>com.documentos.entidades.FacDetAdicional</class>
+		<class>com.documentos.entidades.FacDetAdicionalPK</class>
+		<class>com.documentos.entidades.FacDetDocumento</class>
+		<class>com.documentos.entidades.FacDetDocumentoPK</class>
+		<class>com.documentos.entidades.FacDetImpuesto</class>
+		<class>com.documentos.entidades.FacDetImpuestoPK</class>
+		<class>com.documentos.entidades.FacTransporte</class>
+		<class>com.documentos.entidades.FacTransportePK</class>
+		<class>com.documentos.entidades.FacDetRetencione</class>
+		<class>com.documentos.entidades.FacDetRetencionePK</class>
+		<class>com.documentos.entidades.FacDetMotivosdebito</class>
+		<class>com.documentos.entidades.FacDetMotivosdebitoPK</class>
+		
+		<class>com.usuario.entidades.FacUsuario</class>
+		<class>com.usuario.entidades.FacRole</class>
+		<class>com.usuario.entidades.FacUsuarioPK</class>
+		<class>com.usuario.entidades.FacUsuariosEstablecimiento</class>
+		<class>com.usuario.entidades.FacUsuariosEstablecimientoPK</class>
+		<class>com.usuario.entidades.FacUsuariosRole</class>
+		<class>com.usuario.entidades.FacUsuariosRolePK</class>
+		<class>com.usuario.entidades.FacLoginBitacora</class>
+		
+		
+		<class>com.menu.entidades.FacRolesOpcionMenu</class>
+		<class>com.menu.entidades.FacRolesOpcionMenuPK</class>
+		<class>com.menu.entidades.FacOpcionMenu</class>
+		
+		<class>com.documentos.entidades.FacDestinatario</class>
+		<class>com.documentos.entidades.FacDestinatarioPK</class>
+		<class>com.documentos.entidades.FacDetGuiaRemision</class>
+		<class>com.documentos.entidades.FacDetGuiaRemisionPK</class>
+						
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect" />
+			<!--<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />-->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />			
+		</properties>
+		
+	</persistence-unit>
+</persistence>

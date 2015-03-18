@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+ <!-- <ui:composition template="/templates/clearTemplate.xhtml"> -->
+
+ <ui:composition template="/templates/cimaTemplate.xhtml">
+	<ui:define name="tituloPagina">
+		<h:outputText value=".::Documentos::." />
+	</ui:define>
+
+	<ui:define name="tituloFormulario">
+		<h:outputText value="Documentos" styleClass="titulo" />
+	</ui:define>
+	<ui:define name="contenido" >
+	
+	<style>
+	.style1{
+		text-align: center;
+	}
+	.style2{
+		text-align: center;
+		background: blue;
+		color: white;
+		font-weight: bold;
+	}
+	.imageClass{
+    	display: block;  
+    	background-image: url('/imagenes/pdf.png') no-repeat 100%;  
+    }  
+	</style>
+	<h:form id="frm1" styleClass="form" >
+	  <p:remoteCommand name="onload" action="#{facConsultaControladores2.CargarDatos()}" autorun="true" update="datosEmisorPanel"  />
+		<p:growl id="growl" showDetail="true" sticky="true" />  
+		 	<p:panel id="datosEmisorPanel" >
+		 	<p:panel id="datosEmisor" menuTitle="Buscador" style="margin-bottom:25px;">
+		 		<h3 align="center" class="title ui-widget-header ui-corner-all">Buscador</h3>
+		 		<p:panelGrid style="margin: 0 auto;" id="panelG">
+					<p:row>
+						<p:column colspan="1">
+							<strong><h:outputLabel styleClass="label" value="Cédula/Ruc"/></strong>
+						</p:column>
+						<p:column colspan="1">
+							<h:outputText styleClass="text" style="font-weight: bold;" value="#{facConsultaControladores2.ruc}" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column colspan="1"> 
+							<strong><h:outputLabel styleClass="label" value="Nombres:" /></strong>
+						</p:column>
+						<p:column colspan="1"> 
+							<h:outputText styleClass="text" style="font-weight: bold;" value="#{facConsultaControladores2.razonSocial}" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<strong><h:outputLabel styleClass="label" value="Tipo de Documento:" /></strong>
+						</p:column>
+						<p:column>
+							<p:selectOneMenu value="#{facConsultaControladores2.seleccionTipo}">
+								<f:selectItems value="#{facConsultaControladores2.tipo}"/>
+							</p:selectOneMenu>
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<strong><h:outputLabel styleClass="label" value="Fecha Inicial:" /></strong><br></br>
+						</p:column>
+						<p:column>
+							<p:calendar id="txt_inicial" value ="#{facConsultaControladores2.fechaInicio}" pattern="yyyy-MM-dd" mask="true" mode="popup" showOn="button" readonlyInput="true">
+							<f:convertDateTime type="date"  dateStyle="short" pattern="yyyy-MM-dd" />
+							</p:calendar>
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<strong><h:outputLabel styleClass="label" value="Fecha Final:" /></strong><br></br>						 
+						</p:column>
+						<p:column>
+							<p:calendar id="txt_final" value ="#{facConsultaControladores2.fechaFinal}" pattern="yyyy-MM-dd" mask="true" mode="popup" showOn="button"  readonlyInput="true">
+							<f:convertDateTime type="date"  dateStyle="short" pattern="yyyy-MM-dd" />
+							</p:calendar>							 
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column styleClass="style1" colspan="2">
+							<p:commandButton value="Buscar" icon="ui-icon-search" title="Buscar Filtrado" action="#{facConsultaControladores2.llenarDetalleDocumento}" update=":frm1:listaDocumentos,:frm1:datosEmisorPanel">
+							</p:commandButton>
+							<p:commandButton value="Actualizar" icon="ui-icon-arrowrefresh-1-e" title="Actualizando paguina" update=":frm1:datosEmisorPanel,:frm1:listaDocumentos" action="#{facConsultaControladores2.Actualizar_paguina}">
+							</p:commandButton>
+						</p:column>
+					</p:row>
+				</p:panelGrid>
+				</p:panel>	
+		 	<br></br>
+			   <!--   <p:panel id="datosDetalle22" >-->
+				<h:panelGroup id="listaDocumentos">
+					<p:dataTable styleClass="cabeceraTabla" var="facDetalleDocumentoEntidad" value="#{facConsultaControladores2.detalle_documentos_prueba}" paginator="true" rows="10"
+						selection="#{facConsultaControladores2.selectedfacDetalleDocumentoEntidad}">
+						<f:facet name="header">  
+		            		Consulta de Documemto  
+		        		</f:facet> 
+						<p:column headerText="Identificación" style="width:10%">
+							<h:outputText value="#{facDetalleDocumentoEntidad.RFCREC}" />
+						</p:column>
+						<p:column headerText="Razón Social" style="width:30%">
+							<h:outputText value="#{facDetalleDocumentoEntidad.NOMREC}" />
+						</p:column>
+						<p:column  headerText="Documento" style="width:20%">
+							<h:outputText value="#{facDetalleDocumentoEntidad.TIPODOC}" />
+						</p:column>
+						<p:column  headerText="Secuencial" style="width:15%">
+							<h:outputText value="#{facDetalleDocumentoEntidad.FOLFAC}" />
+						</p:column>
+						<p:column  headerText="TOTAL" style="width:10% ; text-align:rigth">
+							<h:outputText value="#{facDetalleDocumentoEntidad.TOTAL}" />
+						</p:column>
+						<p:column headerText="FECHA" style="width:10% ; text-align:center">
+							<h:outputText value="#{facDetalleDocumentoEntidad.FECHA}" />
+						</p:column>			
+						<p:column headerText="ESTADO">
+							<h:outputText value="#{facDetalleDocumentoEntidad.EDOFAC}"/>
+						</p:column>			
+						<p:column headerText="PDF">
+							<p:commandLink action="#{facConsultaControladores2.pdf()}" update=":datosDetalle22" ajax="false">
+								<p:graphicImage value="/imagenes/pdf.png"></p:graphicImage>
+								<f:setPropertyActionListener target="#{facConsultaControladores2.valorDetalleDocumento}" value="#{facDetalleDocumentoEntidad}"></f:setPropertyActionListener>
+							</p:commandLink>  
+						</p:column>			
+						<p:column headerText="XML">						
+							<p:commandLink  actionListener="#{facConsultaControladores2.xml(facDetalleDocumentoEntidad)}" update=":frm1:growl" ajax="false">
+								<p:graphicImage value="/imagenes/xml.png"></p:graphicImage>
+								<f:setPropertyActionListener target="#{facConsultaControladores2.valorDetalleDocumento}" value="#{facDetalleDocumentoEntidad}"></f:setPropertyActionListener>
+							</p:commandLink>
+						  
+						</p:column>
+						<!--
+						<p:column selectionMode="multiple">
+						</p:column>
+						-->
+					</p:dataTable>
+				</h:panelGroup>
+				<!--  </p:panel>-->
+ 
+		 </p:panel>
+	 </h:form>
+	</ui:define>
+</ui:composition>
+</html>

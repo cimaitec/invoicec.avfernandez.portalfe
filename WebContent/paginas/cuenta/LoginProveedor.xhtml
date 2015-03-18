@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:composition template="/templates/clearTemplate.xhtml">
+		<ui:define name="tituloPagina">
+		<h:outputText value="Login" />
+		</ui:define>
+
+		<ui:define name="tituloFormulario">
+			<h:outputText value="Login de usuarios" />
+		</ui:define>
+	<ui:define name="contenido" >
+		<h:form id="frm1">
+			<p:panel header="Ingreso" id="DatosLogin">
+				<p:remoteCommand process="@this" name="onload" autorun="true" update="datologin"  />
+
+				<h:panelGrid columns="3" id="datologin">
+					
+					<br />
+					<h:outputText value="Ruc:" />
+					<p:inputText value="#{facLoginControlador.rucCliente}" id="txtRucCliente"/>
+					<br />					
+					
+				</h:panelGrid>
+				
+				<p:messages id="msg"/>
+				
+				<br/>				 
+				
+				<p:commandButton value="Ingresar" action="#{facLoginControlador.IngresarProveedor()}" update="@form" ajax="false" icon="ui-icon-person">
+				</p:commandButton>
+			</p:panel>
+			<p:message for="frm1"/>
+		</h:form>
+	</ui:define>
+		
+	</ui:composition>
+</html>

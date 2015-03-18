@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="JavaSource"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/persistence.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/south-street-1.0.10.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/groovy-all-1.7.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/iText-2.1.7.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/itext-2.1.4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasperreports-5.1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/groovy-2.0.0-rc-2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/asm-all-3.3-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/asm-all-4.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/barcode4j-2.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/barcode4j-fop-ext-complete-2.0-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/barcode4j-jasper-1.0.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/barcode4j-light-2.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/batik-all-1.7.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/batik-bridge-1.7.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.apache.batik.dom.svg_1.6.0.v201011041432.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/org.apache.batik.pdf_1.6.0.v201105071520.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/batik-1.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/batik-all-1.8pre-r1084380.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/batik.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/batik-svg-dom-1.7.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/blitzer-1.0.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.datatools.connectivity.jdt.DRIVERLIBRARY/PostgreSQL JDBC Driver"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/common-annotations.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-collections.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-digester.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-fileupload-1.2.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/dot-luv-1.0.8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/icu4j-3.4.4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-1.9.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-1.9.1-lite.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-1.9.1-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-1.9.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-acegisecurity-1.9.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-acegisecurity-1.9.1-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-acegisecurity-1.9.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-hibernate3-1.9.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-hibernate3-1.9.1-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-hibernate3-1.9.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-hibernate4-1.9.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-hibernate4-1.9.1-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-hibernate4-1.9.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-spring2-1.9.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-spring2-1.9.1-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-spring2-1.9.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-spring3-1.9.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-spring3-1.9.1-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-spring3-1.9.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-spring31-1.9.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-spring31-1.9.1-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-spring31-1.9.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-springsecurity2-1.9.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-springsecurity2-1.9.1-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-springsecurity2-1.9.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-springsecurity3-1.9.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-springsecurity3-1.9.1-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-springsecurity3-1.9.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-wicket13-1.9.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-wicket13-1.9.1-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-wicket13-1.9.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-wicket15-1.9.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-wicket15-1.9.1-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-wicket15-1.9.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jdom-2.0.5-contrib.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jdom-2.0.5-javadoc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jdom-2.0.5-junit.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jdom-2.0.5-sources.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jdom-2.0.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/primefaces-3.3.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/primefaces-3.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.jboss.ide.eclipse.as.core.server.runtime.runtimeTarget/JBoss 7.1 Runtime"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/lib/simplecaptcha-latest.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/redmond-1.0.10.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.jboss.ide.eclipse.as.core.server.runtime.runtimeTarget/JBoss 7.1 Runtime 1">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.jsf;jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre7">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
+</classpath>
